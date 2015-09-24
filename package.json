@@ -1,0 +1,48 @@
+{
+  "name": "cordova-asset-generator",
+  "description": "Utility to create assets in various sizes for a typical Apache Cordova project.",
+  "version": "0.1.0",
+  "homepage": "https://github.com/olohmann/cordova-asset-generator",
+  "author": {
+    "name": "Oliver Lohmann",
+    "url": "https://github.com/olohmann",
+    "email": "olohmann@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/olohmann/cordova-asset-generator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/olohmann/cordova-asset-generator/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/olohmann/cordova-asset-generator/blob/master/LICENSE"
+    }
+  ],
+  "keywords": [
+    "cli",
+    "command line"
+  ],
+  "preferGlobal": true,
+  "bin": {
+    "cordova-asset-generator": "cli.js"
+  },
+  "main": "index.js",
+  "engines": {
+    "node": ">=0.12"
+  },
+  "scripts": {
+    "test": "xo --space && node test.js"
+  },
+  "dependencies": {
+    "bluebird": "^2.10.0",
+    "chalk": "^1.0.0",
+    "meow": "^3.1.0"
+  },
+  "devDependencies": {
+    "ava": "0.0.4",
+    "xo": "*"
+  }
+}
