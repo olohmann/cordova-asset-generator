@@ -1,7 +1,7 @@
 {
   "name": "cordova-asset-generator",
   "description": "Utility to create assets in various sizes for a typical Apache Cordova project.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "homepage": "https://github.com/olohmann/cordova-asset-generator",
   "author": {
     "name": "Oliver Lohmann",
