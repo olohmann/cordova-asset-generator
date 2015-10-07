@@ -11,7 +11,7 @@ npm install --global cordova-asset-generator
 
 ## Usage
 
-After cordova-asset-generator is installed globally, you can run `cordova-asset-generator` from the CLI to get the help output:
+After installing the cordova-asset-generator globally, you can run `cordova-asset-generator` from the CLI to get the help output:
 
 ```bash
 cordova-asset-generator 
