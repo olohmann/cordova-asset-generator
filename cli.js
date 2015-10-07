@@ -2,29 +2,36 @@
 'use strict';
 var meow = require('meow');
 var chalk = require('chalk');
-var invoke = require('./');
+var cordovaAssetGenerator = require('./');
 
 var cli = meow({
   help: [
     'Usage',
-    '  cordova-asset-generator [--foo]',
+    '  cordova-asset-generator --input <logo.svg> --outputDirectory <directory>',
     '',
     '',
-    '--foo Prints a foo message.',
+    '--input <file.svg>            The input file (SVG format only).',
+    '--outputDirectory <directory> The output directory. Missing segments will be created.',
+    '[--config <config.json>]      Optional: custom config file for the generator.',
+    '[--verbose]                   Optional: generate more verbose output.',
     ''
   ].join('\n')
 });
 
 var promise = null;
 
-if (cli.flags.foo) {
-  promise = invoke();
+if (cli.flags.input && cli.flags.outputDirectory) {
+  promise = cordovaAssetGenerator(cli.flags.input, cli.flags.outputDirectory, cli.flags.config, cli.flags.verbose);
 } else {
-  console.error(chalk.red.bold('TODO: Not implemented.'));
+  console.error(chalk.red.bold('Missing parameters. See help.'));
 }
 
 if (promise) {
-  promise.catch(function (err) {
+  promise.then(() => {
+    if (cli.flags.verbose) {
+      console.log(chalk.green.bold('Success.'));
+    }
+  }).catch(err => {
     console.error(chalk.red.bold('Error: ' + err.message));
   });
 }
